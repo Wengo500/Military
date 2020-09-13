@@ -17,4 +17,4 @@ class Unit {
     clone() {
         return new Unit(this.type, this.maxHealth, this.maxDistance);
     }
-}
+};

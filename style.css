@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+body {
+    background: rgba(36, 35, 35, 0.562);
+}
+
+.army {
+    display: flex;
+}
+
+.squad {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background: url('img/knight.jpg') no-repeat 1%;
+    background-size: 100%;
+    margin: 20px;
+    width: 150px;
+    height: 200px;
+    border: solid rgba(0, 0, 0, 0.747) 3px;
+    border-radius: 20px;
+    box-shadow: black 0 0 20px 2px, inset black 0 -25px 20px;
+}
+
+.squad_items {
+    width: 90%;
+    text-align: center;
+    margin: 10px;
+}
+
+.squad_health,
+.squad_stamina {
+    margin-top: 5px;
+    width: 100%;
+    height: 8px;
+    border: solid rgba(255, 0, 0, 0.671) 1px;
+    border-radius: 10px;
+    box-shadow: red 0 0 7px;
+}
+
+.squad_stamina {
+    border: solid rgb(59, 59, 194) 1px;
+    box-shadow: rgb(59, 59, 194) 0 0 7px;
+}
+
+.squad_character {
+    color: rgb(4, 151, 4);
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: large;
+    text-shadow: 0 0 3px black, 0 0 1em rgb(255, 0, 0), 0 0 2em rgb(255, 0, 0);
+}
+
+.squad_arrow {
+    background: url('img/arrow.jpg') no-repeat 1%;
+    background-size: 100%;
+}
+
+.squad_cavalry {
+    background: url('img/cavalry.jpg') no-repeat;
+    background-size: 100%;
+}
+
+.btn {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    border: solid rgba(24, 83, 24, 0.527) 3px;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+
+.btn::after {
+    position: absolute;
+    content: "+";
+    color: rgba(24, 83, 24, 0.527);
+    font-size: 6ch;
+    top: -15px;
+    left: -3px;
+}
