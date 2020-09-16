@@ -18,7 +18,7 @@ let createCard = (img, type) => {
     squad.appendChild(squadItems);
 
     let btn = document.createElement("button");
-    btn.className = 'btn';
+    btn.className = 'btn createUnit';
     squadItems.appendChild(btn);
 
     let squadType = document.createElement("p");
@@ -46,6 +46,8 @@ let createCard = (img, type) => {
 createCard(knightBg, 'knight');
 createCard(archerBg, 'archer');
 createCard(cavalryBg, 'cavalry');
+
+
 
 const stateHealthFnc = (a = 100, b = 100, c = 100) => {
 
@@ -75,3 +77,21 @@ const stateStaminaFnc = (a = 100, b = 100, c = 100) => {
     });
 };
 stateStaminaFnc();
+
+document.getElementsByClassName('createUnit')[0].addEventListener('click', () => {
+    for (let i = 0; i < 1; i++) {
+        archer.push(archer[0].clone());
+    }
+});
+document.getElementsByClassName('createUnit')[1].addEventListener('click', () => {
+    for (let i = 0; i < 1; i++) {
+        knight.push(knight[0].clone());
+
+    }
+});
+document.getElementsByClassName('createUnit')[2].addEventListener('click', () => {
+    for (let i = 0; i < 1; i++) {
+        cavalry.push(cavalry[0].clone());
+
+    }
+});

@@ -7,23 +7,18 @@ const knight = [new Unit("Knight", 25, 100, 10)];
 const cavalry = [new Unit("Cavalry", 25, 300, 10)];
 
 
-archer.push(archer[0].clone());
-archer.push(archer[0].clone());
-archer.push(archer[0].clone());
 
-knight.push(knight[0].clone());
-knight.push(knight[0].clone());
-knight.push(knight[0].clone());
 
-cavalry.push(cavalry[0].clone());
-cavalry.push(cavalry[0].clone());
-cavalry.push(cavalry[0].clone());
+
+// archer.push(archer[0].clone());
+// archer.push(archer[0].clone());
+
 
 const archerSqud = new Squad(archer);
 const knightSquad = new Squad(knight);
 const cavalrySquad = new Squad(cavalry);
 
-console.log(archer, knight, cavalry)
+console.log(archer, knight, cavalry);
 
 let draw = () => {
     let posArcher = 0;
