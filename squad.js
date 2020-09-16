@@ -2,6 +2,8 @@ class Squad {
     constructor(defaultResurces) {
         this._squad = [];
         this.addResources(defaultResurces);
+        this.maxUnits = 4;
+        this.squadHealth = this.maxHealth * this.maxUnits;
     }
     addResources(defaultResurces) {
         this._squad = [...this._squad, ...defaultResurces];
@@ -21,4 +23,4 @@ class Squad {
     clone() {
         return this._squad.map((unit) => unit.clone());
     }
-}
+};
