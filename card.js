@@ -1,6 +1,7 @@
 const knightBg = "img/knight.jpg";
 const archerBg = "img/arrow.jpg";
 const cavalryBg = "img/cavalry.jpg";
+const healerBg = "img/healer.jpg";
 
 let panel = document.createElement("div");
 panel.className = 'panel';
@@ -46,24 +47,7 @@ let createCard = (img, type) => {
 createCard(archerBg, 'archer');
 createCard(knightBg, 'knight');
 createCard(cavalryBg, 'cavalry');
-
-document.getElementsByClassName('createUnit')[0].addEventListener('click', () => {
-    archer.push(archer[0].clone());
-});
-document.getElementsByClassName('createUnit')[1].addEventListener('click', () => {
-    knight.push(knight[0].clone());
-});
-document.getElementsByClassName('createUnit')[2].addEventListener('click', () => {
-    cavalry.push(cavalry[0].clone());
-});
-
-const mathHealth = (array, res = 0) => {
-    array.forEach(element => {
-        res += element.health;
-        console.log(res);
-    });
-}
-mathHealth(archer);
+createCard(healerBg, 'healer');
 
 const stateHealthFnc = (a = 100, b = 100, c = 100) => {
 

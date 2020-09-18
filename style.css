@@ -10,7 +10,8 @@ button {
 }
 
 canvas {
-    background: url("img/bg.jpg") repeat-x;
+    background: url("img/bg2.jpg") repeat-x;
+    background-size: 70rem;
 }
 
 .panel {
