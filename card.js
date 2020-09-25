@@ -52,37 +52,3 @@ createCard(archerBg, 'archer');
 createCard(knightBg, 'knight');
 createCard(cavalryBg, 'cavalry');
 createCard(healerBg, 'healer');
-
-const stateHealthFnc = () => {
-    document.getElementsByClassName('squad_health')[0].addEventListener('click', () => {
-        unitHealth(archer);
-        squodDead(archer, 0, archerDeadBg)
-        document.getElementsByClassName("state_health")[0].style.width = `${mathHealth(archer)}%`;
-    });
-    document.getElementsByClassName('squad_health')[1].addEventListener('click', () => {
-        unitHealth(knight)
-        squodDead(knight, 1, knightDeadBg)
-        document.getElementsByClassName("state_health")[1].style.width = `${mathHealth(knight)}%`;
-    });
-    document.getElementsByClassName('squad_health')[2].addEventListener('click', () => {
-        unitHealth(cavalry)
-        squodDead(cavalry, 2, cavalryDeadBg)
-        document.getElementsByClassName("state_health")[2].style.width = `${mathHealth(cavalry)}%`;
-    });
-};
-stateHealthFnc();
-
-
-// const stateStaminaFnc = (a = 100, b = 100, c = 100) => {
-
-//     document.getElementsByClassName('squad_stamina')[0].addEventListener('click', () => {
-//         document.getElementsByClassName("state_stamina")[0].style.width = `${a -= 20}%`;
-//     });
-//     document.getElementsByClassName('squad_stamina')[1].addEventListener('click', () => {
-//         document.getElementsByClassName("state_stamina")[1].style.width = `${b -= 10}%`;
-//     });
-//     document.getElementsByClassName('squad_stamina')[2].addEventListener('click', () => {
-//         document.getElementsByClassName("state_stamina")[2].style.width = `${c -= 5}%`;
-//     });
-// };
-// stateStaminaFnc();

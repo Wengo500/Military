@@ -16,11 +16,6 @@ class Unit {
         this.damage = damage;
     }
 
-    unitDead1 = () => {
-        if (this.health <= 0) {
-            console.log('Dead');
-        }
-    }
     isReadyToMuve() {
         return this.distance > 0;
     }
@@ -36,7 +31,3 @@ class Unit {
     }
 
 };
-
-const unitHealth = (arr) => {
-    return arr[0].health <= 0 ? arr.splice(0, 1) : arr[0].health -= 10;
-}
