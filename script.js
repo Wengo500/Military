@@ -10,7 +10,7 @@ const createNewUnit = (arr, index) => {
     document.getElementsByClassName('createUnit')[index].addEventListener('click', () => {
         arr.push(arr[0].clone());
         document.getElementsByClassName("state_health")[index].style.width = `${mathHealth(arr)}%`;
-        document.getElementsByClassName("state_stamina")[index].style.width = `${mathDistance(arr)}%`;
+        document.getElementsByClassName("state_stamina")[index].style.width = `${archerSquad.mathDistance()}%`;
     });
 };
 createNewUnit(archer, 0);
@@ -22,7 +22,6 @@ const archerSquad = new Squad(archer);
 const knightSquad = new Squad(knight);
 const cavalrySquad = new Squad(cavalry);
 const healerSquad = new Squad(healer);
-archerSquad.qwe();
 console.log(archer, knight, cavalry, healer);
 
 const stateHealthWidth = (arr, index) => {
@@ -33,13 +32,14 @@ stateHealthWidth(knight, 1);
 stateHealthWidth(cavalry, 2);
 stateHealthWidth(healer, 3);
 
-const stateStaminaWidth = (arr, index) => {
-    document.getElementsByClassName("state_stamina")[index].style.width = `${mathDistance(arr)}%`;
+const stateStaminaWidth = (index) => {
+    archerSquad.mathDistance()
+    document.getElementsByClassName("state_stamina")[index].style.width = `${archerSquad.mathDistance()}%`;
 }
-stateStaminaWidth(archer, 0);
-stateStaminaWidth(knight, 1);
-stateStaminaWidth(cavalry, 2);
-stateStaminaWidth(healer, 3);
+stateStaminaWidth(0);
+// stateStaminaWidth(knight, 1);
+// stateStaminaWidth(cavalry, 2);
+// stateStaminaWidth(healer, 3);
 
 let draw = () => {
     let posArcher = 0;
@@ -60,3 +60,5 @@ let draw = () => {
     requestAnimationFrame(draw);
 };
 draw();
+
+console.log(archerSquad.mathDistance());

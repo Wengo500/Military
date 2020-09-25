@@ -4,8 +4,8 @@ class Squad {
         this.addResources(defaultResurces);
         this.maxUnits = 4;
     }
-    qwe(res = 0) {
-        this._squad.forEach(element => res += element.distance);
+    mathDistance(res = 0) {
+        this._squad.forEach(element => res = element.distance);
         return res /= 4;
     }
 
@@ -30,10 +30,10 @@ class Squad {
 };
 
 
-const mathDistance = (array, res = 0) => {
-    array.forEach(element => res += element.distance);
-    return res /= 4;
-}
+// const mathDistance = (array, res = 0) => {
+//     array.forEach(element => res += element.distance);
+//     return res /= 4;
+// }
 const mathHealth = (array, res = 0) => {
     array.forEach(element => res += element.health);
     return res /= 4;
@@ -43,7 +43,7 @@ const unitDead = (arr) => {
     arr[0].health <= 0 ? arr.splice(0, 1) : arr[0].health -= 10;
 }
 const unitStamina = (arr) => {
-    mathDistance(arr) <= 0 ? console.log('Squad is not ready to move') : arr.forEach(element => element.distance -= 10);
+    archerSquad.mathDistance() <= 0 ? console.log('Squad is not ready to move') : arr.forEach(element => element.distance -= 10);
 }
 
 const stateHealthFnc = () => {
@@ -69,16 +69,16 @@ stateHealthFnc();
 const stateStaminaFnc = () => {
     document.getElementsByClassName('squad_stamina')[0].addEventListener('click', () => {
         unitStamina(archer)
-        document.getElementsByClassName("state_stamina")[0].style.width = `${mathDistance(archer)}%`;
+        document.getElementsByClassName("state_stamina")[0].style.width = `${archerSquad.mathDistance()}%`;
     });
-    document.getElementsByClassName('squad_stamina')[1].addEventListener('click', () => {
-        unitStamina(knight)
-        document.getElementsByClassName("state_stamina")[1].style.width = `${mathDistance(knight)}%`;
-    });
-    document.getElementsByClassName('squad_stamina')[2].addEventListener('click', () => {
-        unitStamina(cavalry)
-        document.getElementsByClassName("state_stamina")[2].style.width = `${mathDistance(cavalry)}%`;
-    });
+    // document.getElementsByClassName('squad_stamina')[1].addEventListener('click', () => {
+    //     unitStamina(knight)
+    //     document.getElementsByClassName("state_stamina")[1].style.width = `${mathDistance(knight)}%`;
+    // });
+    // document.getElementsByClassName('squad_stamina')[2].addEventListener('click', () => {
+    //     unitStamina(cavalry)
+    //     document.getElementsByClassName("state_stamina")[2].style.width = `${mathDistance(cavalry)}%`;
+    // });
 };
 stateStaminaFnc();
 
