@@ -6,40 +6,25 @@ const knight = [new Unit("Knight", 100, 100, 10)];
 const cavalry = [new Unit("Cavalry", 100, 100, 10)];
 const healer = [new Unit("Healer", 300, 1000, 0.5)];
 
-const createNewUnit = (arr, index) => {
-    document.getElementsByClassName('createUnit')[index].addEventListener('click', () => {
-        arr.push(arr[0].clone());
-        document.getElementsByClassName("state_health")[index].style.width = `${mathHealth(arr)}%`;
-        document.getElementsByClassName("state_stamina")[index].style.width = `${archerSquad.mathDistance()}%`;
-    });
-};
-createNewUnit(archer, 0);
-createNewUnit(knight, 1);
-createNewUnit(cavalry, 2);
-createNewUnit(healer, 3);
-
+archer.push(archer[0].clone());
 const archerSquad = new Squad(archer);
 const knightSquad = new Squad(knight);
 const cavalrySquad = new Squad(cavalry);
 const healerSquad = new Squad(healer);
 console.log(archer, knight, cavalry, healer);
 
-const stateHealthWidth = (arr, index) => {
-    document.getElementsByClassName("state_health")[index].style.width = `${mathHealth(arr)}%`;
-}
-stateHealthWidth(archer, 0);
-stateHealthWidth(knight, 1);
-stateHealthWidth(cavalry, 2);
-stateHealthWidth(healer, 3);
 
-const stateStaminaWidth = (index) => {
-    archerSquad.mathDistance()
-    document.getElementsByClassName("state_stamina")[index].style.width = `${archerSquad.mathDistance()}%`;
+const createNewUnit = (squad, unit, index) => {
+    document.getElementsByClassName('createUnit')[index].addEventListener('click', () => {
+        squad.pushNewUnit(unit);
+        console.log(squad.mathHealth());
+    });
 }
-stateStaminaWidth(0);
-// stateStaminaWidth(knight, 1);
-// stateStaminaWidth(cavalry, 2);
-// stateStaminaWidth(healer, 3);
+createNewUnit(archerSquad, archer, 0)
+createNewUnit(knightSquad, knight, 1)
+createNewUnit(cavalrySquad, cavalry, 2)
+createNewUnit(healerSquad, healer, 3)
+
 
 let draw = () => {
     let posArcher = 0;
@@ -60,5 +45,3 @@ let draw = () => {
     requestAnimationFrame(draw);
 };
 draw();
-
-console.log(archerSquad.mathDistance());
