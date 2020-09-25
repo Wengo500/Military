@@ -60,23 +60,3 @@ let draw = () => {
     requestAnimationFrame(draw);
 };
 draw();
-
-const canvas = document.getElementById("canvas");
-const context = canvas.getContext("2d");
-
-const archer = [new Unit("Archer", 100, 100, 10)];
-const knight = [new Unit("Knight", 100, 100, 10)];
-const cavalry = [new Unit("Cavalry", 100, 100, 10)];
-const healer = [new Unit("Healer", 300, 1000, 0.5)];
-
-const createNewUnit = (arr, index) => {
-    document.getElementsByClassName('createUnit')[index].addEventListener('click', () => {
-        arr.push(arr[0].clone());
-        document.getElementsByClassName("state_health")[index].style.width = `${mathHealth(arr)}%`;
-        document.getElementsByClassName("state_stamina")[index].style.width = `${mathDistance(arr)}%`;
-    });
-};
-createNewUnit(archer, 0);
-createNewUnit(knight, 1);
-createNewUnit(cavalry, 2);
-createNewUnit(healer, 3);

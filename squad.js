@@ -5,11 +5,8 @@ class Squad {
         this.maxUnits = 4;
     }
     qwe(res = 0) {
-        this._squad.forEach(element => res += element.health);
+        this._squad.forEach(element => res += element.distance);
         return res /= 4;
-    }
-    push() {
-        arr.push(arr[0].clone());
     }
 
     addResources(defaultResurces) {
@@ -31,6 +28,8 @@ class Squad {
         return this._squad.map((unit) => unit.clone());
     }
 };
+
+
 const mathDistance = (array, res = 0) => {
     array.forEach(element => res += element.distance);
     return res /= 4;
